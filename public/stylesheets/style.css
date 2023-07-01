@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image:  linear-gradient(to right,transparent, rgba(192, 207, 24, 0.813)),url('/images/Fondoc.jpg');
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat:no-repeat;
+    background-color: #ffffff;
+  
+}
+.blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  backdrop-filter: blur(10px); /* Ajusta el valor de desenfoque según tus necesidades */
+}
+
+.social-icons {
+  position: fixed;
+  right: 30px; /* Ajusta la posición horizontal */
+  bottom: 20px; /* Ajusta la posición vertical */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-icons i {
+  margin-bottom: 30px; /* Espacio entre íconos */
+}
+
+
+a {
+  color: #00b7ff;
+}
+
+h1 {
+  color: 15px;
+}
+
+
+.floating-image {
+  position: absolute;
+  top: 20%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  animation: floatAnimation 3s infinite alternate;
+}
+
+@keyframes floatAnimation {
+  from {
+    transform: translateX(-10px);
+  }
+  to {
+    transform: translateX(10px);
+  }
+}
+
+
+.image-text{
+ position: absolute;
+  top: 40%;
+  left: 15%;
+  font-size: 30px;
+  color: #c8a300;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.image-subtext{
+  position: absolute;
+   top: 50%;
+   left: 20%;
+   font-size: 20px;
+   color: #7d6d22;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+ }

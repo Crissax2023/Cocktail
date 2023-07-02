@@ -20,13 +20,17 @@ require("./config")(app);
 
 // default value for title local
 const capitalize = require("./utils/capitalize");
-const projectName = "Coktail";
+const projectName = "Cocktail";
 
 app.locals.appTitle = `${capitalize(projectName)} created by Karla and Cristian`;
 
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
+
+const userRoutes = require('./routes/auth.routes');
+app.use('/auth', userRoutes);
+
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg p-4" style="background-color: #0195ff06;">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand link-light" href="#">
+          <img src="/images/coctel.png" alt="Bootstrap" width="40" height="40">
+          <em>Cocktail</em>
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active link-secondary" aria-current="page" href="/">Home</a>
+            </li>
+
+          </ul>
+          <div class="navbar-nav mb-1 mb-lg-0 d-flex">
+            <li class="nav-item m-2">
+              <a class="nav-link link-light" href="/auth/signup">SignUp</a>
+            </li>
+             <li class="nav-item m-2">
+                <a class="btn btn-outline-warning" href="/auth/login">Login</a>
+             </li>
+          </div>
+        </div>
+      </div>
+    </nav>
+{{#if errorMessage}}    
+<div class="alert alert-info" role="alert">
+  {{errorMessage}}
+</div>
+{{/if}}
+<div class="container">
+  <div class="row">
+    <div class="col align-self-start">
+    </div>
+    <div class="col align-self-center">
+
+        <div class="card border-warning" style="background-color: #eeee1337; width: 20rem">
+            <div class="card-header text-bg-warning border-warning">SingUp</div>
+            <div class="card-body">
+                
+                <form action="/auth/signup" method="POST">
+                    <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">User Name</label>
+                    <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your User name with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" name="confirmpassword" id="exampleInputPassword1">
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="submit" class="btn btn-warning">Submit</button>
+                    </div>
+                   
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+   
+    <div class="col align-self-end">
+    </div>
+  </div>
+</div>
+
+ <br>
+
+<div class="social-icons">
+    <i class="bi bi-facebook text-light"></i>
+    <i class="bi bi-whatsapp text-light"></i>
+    <i class="bi bi-messenger text-light"></i>
+</div>

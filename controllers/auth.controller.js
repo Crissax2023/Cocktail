@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcrypt')
 const User = require('../models/User.model')
 
 const getSignup = (req, res) =>{

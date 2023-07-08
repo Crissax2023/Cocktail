@@ -14,24 +14,30 @@
             <li class="nav-item">
               <a class="nav-link active link-secondary" aria-current="page" href="/">Home</a>
             </li>
-            <li class="nav-item">
+            <!--li class="nav-item">
               <a class="nav-link link-secondary" href="#">Link</a>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled">Disabled</a>
-            </li>
+            </li-->
           </ul>
           <div class="navbar-nav mb-1 mb-lg-0 d-flex">
             <li class="nav-item m-2">
-              <a class="nav-link link-light" href="#">SingUp</a>
+              <a class="nav-link link-light" href="/auth/signup">SignUp</a>
             </li>
              <li class="nav-item m-2">
-                <a class="btn btn-outline-warning" href="/login">Login</a>
+                <a class="btn btn-outline-warning" href="/auth/login">Login</a>
              </li>
           </div>
         </div>
       </div>
     </nav>
+
+{{#if errorMessage}}    
+<div class="alert alert-warning" role="alert">
+  {{errorMessage}}
+</div>
+{{/if}}
 
 
 <div class="container">
@@ -47,18 +53,15 @@
                 <form action="/auth/login" method="POST">
 
                     <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
                     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
                     </div>
-                    <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
+
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <button type="submit" class="btn btn-warning">Submit</button>
                     </div>

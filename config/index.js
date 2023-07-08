@@ -17,10 +17,36 @@ const favicon = require("serve-favicon");
 // https://www.npmjs.com/package/path
 const path = require("path");
 
+const session = require('express-session')
+
+const MongoStore = require('connect-mongo')
+const MONGO_URI =
+  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/Coktail";
 // Middleware configuration
 module.exports = (app) => {
+  
+  app.use(
+    session({
+      secret:process.env.SESSION_SECRET,
+      resave:true,
+      saveUninitialized:false,
+      cookie:
+      {
+        httpOnly:true,
+        maxAge:60000
+      },
+      store:MongoStore.create(
+      {
+        mongoUrl:MONGO_URI
+      }
+      )
+    })
+  )
+  
   // In development environment the app logs
   app.use(logger("dev"));
+
+
 
   // To have access to `body` property in the request
   app.use(express.json());

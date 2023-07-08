@@ -16,13 +16,13 @@ userRouter.post('/signup',postSignup)
 
 
 
-userRouter.get('/Cocktail/:id',getProfile)
+userRouter.get('/profile',getProfile)
 
 
 
 
-//userRouter.get('/login', getLogin)
-//userRouter.post('/login', postLogin)
+userRouter.get('/login', getLogin)
+userRouter.post('/login', postLogin)
 
 
 module.exports = userRouter;

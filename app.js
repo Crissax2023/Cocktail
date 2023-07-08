@@ -27,6 +27,10 @@ app.locals.appTitle = `${capitalize(projectName)} created by Karla and Cristian`
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
+const drinkRoutes = require('./routes/drink.routes');
+app.use("/drink", drinkRoutes);
+const commentRoutes = require('./routes/comment.routes');
+app.use("/comment", commentRoutes);
 
 const userRoutes = require('./routes/auth.routes');
 app.use('/auth', userRoutes);

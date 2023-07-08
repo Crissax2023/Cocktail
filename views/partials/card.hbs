@@ -1,0 +1,17 @@
+<div class="card mt-4 {{size}}">
+    <a href="/image-post/{{_id}}/detail">
+        <img src="{{imageUrl}}" alt="{{imageName}}" class="card-img-top">
+    </a>    
+    <div class="card-header">
+        <h5 class="card-subtitle">author: {{user.username}}</h5>
+    </div>
+    <div class="card-body">   
+        <h2 class="card-title">{{title}}</h2> 
+        <p class="card-text">
+            {{content}}
+        </p>            
+    </div>
+    <div class="card-footer">
+        {{user.createdAt}}
+    </div>
+</div>

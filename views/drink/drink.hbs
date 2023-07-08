@@ -1,0 +1,31 @@
+<div class="container d-flex justify-content-center {{size}}">
+    <div class="vstack">
+        {{ card user=userPostInfo }}
+        {{#if isLoggedIn}}
+        <form action="/comment/create/{{_id}}" method="POST" class="{{size}}">
+            <span class="input-group-text d-flex justify-content-center">Write a comment</span>
+            
+            <div class="input-group">
+                <textarea class="form-control" aria-label="comment" name="bodyContent"></textarea>
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-secondary">Submit</button>
+            </div>
+        </form>
+        {{/if}}
+        <p class="bg-dark" style="color: aliceblue;">Comments: </p>
+        {{#each comments}}
+            <div class="card {{size}}">
+                <div class="card-header">
+                    <h5 class="card-title">username: {{userId.username}}</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{body}}</p>
+                </div>
+                 <div class="card-footer text-body-secondary">
+                    {{createdAt}}
+                 </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg p-4" style="background-color: #0195ff06;">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand link-light" href="#">
+          <img src="/images/coctel.png" alt="Bootstrap" width="40" height="40">
+          <em>Cocktail</em>
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active link-secondary" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-secondary" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-secondary" href='/auth/profile'>User</a>
+            </li>
+          </ul>
+          <div class="navbar-nav mb-1 mb-lg-0 d-flex">
+
+             <li class="nav-item m-2">
+                <a class="btn btn-outline-warning" href="#">Logout</a>
+           
+             </li>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col align-self-start">
+    </div>
+    <div class="col align-self-center">
+
+        <div class="card border-warning" style="background-color: #eeee1337; width: 20rem">
+            <div class="card-header text-bg-warning border-warning">User</div>
+            <div class="card-body">
+                
+                Username :{{username}}
+<br>
+                Email: {{email}}
+
+
+            </div>
+        </div>
+
+    </div>
+    <div class="col align-self-end">
+    </div>
+  </div>
+</div>
+
+
+
+<div class="social-icons">
+    <i class="bi bi-facebook text-light"></i>
+    <i class="bi bi-whatsapp text-light"></i>
+    <i class="bi bi-messenger text-light"></i>
+</div>

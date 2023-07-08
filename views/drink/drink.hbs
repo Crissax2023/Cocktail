@@ -1,6 +1,6 @@
 <div class="container d-flex justify-content-center {{size}}">
     <div class="vstack">
-        {{> card user=userPostInfo }}
+        {{ card user=userPostInfo }}
         {{#if isLoggedIn}}
         <form action="/comment/create/{{_id}}" method="POST" class="{{size}}">
             <span class="input-group-text d-flex justify-content-center">Write a comment</span>

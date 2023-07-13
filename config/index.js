@@ -27,7 +27,7 @@ module.exports = (app) => {
   
   app.use(
     session({
-      secret:process.env.SESSION_SECRET,
+      secret:process.env.SESSION_SECRET || "quickword" ,
       resave:true,
       saveUninitialized:false,
       cookie:

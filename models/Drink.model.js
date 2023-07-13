@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const drinkSchema = new Schema(
+const imagePostSchema = new Schema(
     {
         title: {
             type: String,
@@ -29,4 +29,4 @@ const drinkSchema = new Schema(
     }
 )
 
-module.exports = model('Drink', drinkSchema);
+module.exports = model('ImagePost', imagePostSchema);

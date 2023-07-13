@@ -2,7 +2,7 @@ const drinkRouter = require("express").Router();
 const { 
     getOneDrink,
     createDrink
-}  = require('../controller/drink.controller');
+}  = require('../controller/image-post.controller');
 const uploadImage = require('../middleware/cloudinary');
 
 

@@ -21,14 +21,16 @@ require("./config")(app);
 // default value for title local
 const capitalize = require("./utils/capitalize");
 const projectName = "Cocktail";
-
+hbs.registerPartials(__dirname + '/views/partials')
 app.locals.appTitle = `${capitalize(projectName)} created by Karla and Cristian`;
 
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
-const drinkRoutes = require('./routes/drink.routes');
-app.use("/drink", drinkRoutes);
+
+const postImageRoutes = require('./routes/image-post.routes');
+app.use("/image-post", postImageRoutes);
+
 const commentRoutes = require('./routes/comment.routes');
 app.use("/comment", commentRoutes);
 

@@ -18,7 +18,7 @@ const Drink = require('../models/Drink.model');
         imageUrl: req.file.path
     });
     
-    res.redirect(`/drink/${drink._id}/detail`)
+    res.redirect(`/image-post/${drink._id}/detail`)
     }
 
 
@@ -35,7 +35,7 @@ const Drink = require('../models/Drink.model');
         comments,
         userId: userPostInfo, 
         createdAt
-        } = await drink.findById(id)
+        } = await Drink.findById(id)
         .populate('userId')
         .populate({
         path: 'comments',
@@ -47,7 +47,7 @@ const Drink = require('../models/Drink.model');
         console.log('este es el user que creo el post', userPostInfo);
         console.log('comments: ', comments);
         const size = 'col-8'
-        res.render('post/detail-image-post', { 
+        res.render('partials/card', { 
         _id, 
         imageUrl, 
         imageName, 

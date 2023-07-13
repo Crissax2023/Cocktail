@@ -1,9 +1,111 @@
-<div class="card mt-4 {{size}}">
+<nav class="navbar navbar-expand-lg p-4" style="background-color: #0195ff06;">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand link-light" href="#">
+          <img src="/images/coctel.png" alt="Bootstrap" width="40" height="40">
+          <em>Cocktail</em>
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active link-secondary" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-secondary" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-secondary" href='/auth/profile'>User</a>
+            </li>
+          </ul>
+          <div class="navbar-nav mb-1 mb-lg-0 d-flex">
+             <li class="nav-item m-2">
+                <a class="btn btn-outline-success"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat" >New Coctel</a>
+             </li>
+             <li class="nav-item m-2">
+                <a class="btn btn-outline-warning" href="/auth/logout">Logout</a>
+             </li>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog" >
+        <div class="modal-content border-warning" style="background-color: #ffffff9d;">
+
+          <div class="modal-header text-bg-warning border-warning" >
+            <h1 class="modal-title fs-5" id="exampleModalLabel">New Recipe or Cocktail</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            <form action="/image-post/create" method="POST" enctype="multipart/form-data">
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Title:</label>
+                <input type="text" class="form-control border-warning" id="recipient-name" name="title">
+              </div>
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Recipe:</label>
+                <textarea name="bodyContent" class="form-control border-warning" id="message-text" style="height: 61px;"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="formFile" class="form-label ">Default file input example</label>
+                <input class="form-control border-warning text-bg-warning" type="file" id="formFile" name="picture">
+              </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-outline-success">Send</button>
+          </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+<div class="grid text-center">
+  <div class="g-col-3"></div>
+
+<div class="g-col-4">
+<div class="card mb-2" style="width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+         <img src="{{imageUrl}}" class="img-fluid rounded-start">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text"> {{imageName}}</p>
+        <p class="card-text"><small class="text-body-secondary">{{userId.createdAt}}</small></p>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+</div>
+    
+
+</div>
+</div>
+
+<!--div class="card mt-4 {{size}}">
     <a href="/image-post/{{_id}}/detail">
         <img src="{{imageUrl}}" alt="{{imageName}}" class="card-img-top">
     </a>    
     <div class="card-header">
-        <h5 class="card-subtitle">author: {{user.username}}</h5>
+        <h5 class="card-subtitle">author: {{userId.username}}{{userId.email}}</h5>
     </div>
     <div class="card-body">   
         <h2 class="card-title">{{title}}</h2> 
@@ -14,4 +116,11 @@
     <div class="card-footer">
         {{user.createdAt}}
     </div>
+</div-->
+
+
+<div class="social-icons">
+    <i class="bi bi-facebook text-light"></i>
+    <i class="bi bi-whatsapp text-light"></i>
+    <i class="bi bi-messenger text-light"></i>
 </div>

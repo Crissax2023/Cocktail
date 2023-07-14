@@ -27,7 +27,7 @@ userRouter.get('/login', getLogin)
 userRouter.post('/login', postLogin)
 
 
-userRouter.get('/logout',(req,res,next)=>
+userRouter.get('/logout',isLoggedOut,(req,res,next)=>
 {
      req.session.destroy((err)=>{
         if(err)

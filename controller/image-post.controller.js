@@ -2,7 +2,7 @@ const Drink = require('../models/Drink.model');
 
 
     const createDrink = async (req, res, next) => {
-    const { title, content } = req.body;
+    const { title, content,ingredientes } = req.body;
     const { _id: userId  } = req.session.currentUser;
     console.log('req.file: ', req.file);
 
@@ -14,6 +14,7 @@ const Drink = require('../models/Drink.model');
         userId,
         title,
         content,
+        ingredientes,
         imageName: title,
         imageUrl: req.file.path
     });
@@ -31,6 +32,7 @@ const Drink = require('../models/Drink.model');
         imageUrl,
         imageName,
         title,
+        ingredientes,
         content,
         comments,
         userId: userPostInfo, 
@@ -53,6 +55,7 @@ const Drink = require('../models/Drink.model');
         imageName, 
         title, 
         content, 
+        ingredientes,
         size,
         comments,
         userPostInfo 
@@ -120,7 +123,7 @@ const Drink = require('../models/Drink.model');
         console.log('data: ', data);
         console.log('rows: ', data.rows);
 
-        res.render('index', { rows: data.rows })
+        res.render('cards', { rows: data.rows })
     }
 
     function generateRandomArray() {
@@ -129,6 +132,9 @@ const Drink = require('../models/Drink.model');
     const num3 = 12 - (num1 + num2);
     return [num1, num2, num3];
     }
+
+
+    
 
     module.exports = {
         getAllDrinks,

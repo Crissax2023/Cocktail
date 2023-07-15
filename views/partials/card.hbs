@@ -15,7 +15,7 @@
               <a class="nav-link active link-secondary" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link link-secondary" href="#">Link</a>
+              <a class="nav-link link-secondary" href="/cards">Cockteles</a>
             </li>
             <li class="nav-item">
               <a class="nav-link link-secondary" href='/auth/profile'>User</a>
@@ -50,15 +50,19 @@
             <form action="/image-post/create" method="POST" enctype="multipart/form-data">
               <div class="mb-3">
                 <label for="recipient-name" class="col-form-label">Title:</label>
-                <input type="text" class="form-control border-warning" id="recipient-name" name="title">
+                <input type="text" class="form-control border-warning" id="recipient-name" name="title" required>
+              </div>
+             <div class="mb-3">
+                <label for="message-text" class="col-form-label">Ingredients:</label>
+                <textarea name="ingredientes" class="form-control border-warning" id="message-text" style="height: 61px;" required></textarea>
               </div>
               <div class="mb-3">
                 <label for="message-text" class="col-form-label">Recipe:</label>
-                <textarea name="bodyContent" class="form-control border-warning" id="message-text" style="height: 61px;"></textarea>
+                <textarea name="content" class="form-control border-warning" id="message-text" style="height: 61px;" required></textarea>
               </div>
               <div class="mb-3">
                 <label for="formFile" class="form-label ">Default file input example</label>
-                <input class="form-control border-warning text-bg-warning" type="file" id="formFile" name="picture">
+                <input class="form-control border-warning text-bg-warning" type="file" id="formFile" name="picture" required>
               </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
@@ -84,8 +88,9 @@
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">{{title}}</h5>
-        <p class="card-text"> {{imageName}}</p>
-        <p class="card-text"><small class="text-body-secondary">{{userId.createdAt}}</small></p>
+        <p class="card-text"> {{ingredientes}}</p>
+        <p class="card-text"> {{content}}</p>
+        <p class="card-text"><small class="text-body-secondary">{{userId.username}}</small></p>
       </div>
 
 

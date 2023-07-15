@@ -7,6 +7,7 @@ const imagePostSchema = new Schema(
             required: false,
             trim: true,
         },
+        ingredientes:String,
         content: String,
         imageName: {
             type: String,
